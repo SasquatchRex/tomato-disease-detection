@@ -1,58 +1,154 @@
-🍅 Tomato Leaf Disease Detection & Classification
-This repository contains a specialized Deep Learning solution for identifying various tomato plant pathologies. Developed as part of a Computer Engineering project, it focuses on creating a high-performance model that remains computationally efficient and resource-aware.
+# 🍅 Tomato Leaf Disease Detection & Classification
 
-🌟 Features
-Multi-Class Detection: Engineered to recognize multiple tomato health states (e.g., Bacterial Spot, Early Blight, Late Blight, Yellow Leaf Curl, and Healthy).
+A **Deep Learning–based Computer Engineering project** focused on accurate and efficient classification of tomato leaf diseases.
+The system is designed to deliver **high predictive performance while remaining computationally lightweight and environmentally conscious (Green AI approach).**
 
-Optimized Architecture: Utilizes a custom Convolutional Neural Network (CNN) optimized for high spatial feature extraction with minimal parameter overhead.
+---
 
-Resource-Constrained Training: Specifically tuned to handle RAM limitations by utilizing a streamlined data augmentation pipeline.
+## 🌟 Key Features
 
-Data Pipeline Efficiency: Employs tf.data API with prefetching and caching to maximize GPU utilization and minimize CPU bottlenecks.
+### ✅ Multi-Class Disease Classification
 
-Green AI Principles: Focused on reducing the carbon footprint of training by utilizing efficient resizing and early-stopping mechanisms.
+Detects and classifies multiple tomato plant health conditions:
 
-📊 Model Performance
-Accuracy: Achieved a robust validation accuracy (approx. 98%) across all target classes.
+* Bacterial Spot
+* Early Blight
+* Late Blight
+* Tomato Yellow Leaf Curl Virus
+* Healthy Leaves
 
-Validation: Verified using categorical cross-entropy loss and accuracy metrics to ensure real-world reliability.
+### ⚙️ Optimized CNN Architecture
 
-📁 Project Structure
-Bash
+* Custom **Convolutional Neural Network (CNN)** tailored for plant pathology recognition
+* Strong spatial feature extraction with **low parameter overhead**
+* Designed for **efficient training on limited hardware**
+
+### 🧠 Memory-Efficient Training Pipeline
+
+* Built to handle **RAM constraints during training**
+* Uses **on-the-fly augmentation** instead of dataset expansion
+
+### 🚀 Efficient Data Pipeline
+
+* Implemented with **TensorFlow tf.data API**
+* Uses:
+
+  * Prefetching
+  * Caching
+  * Parallel data loading
+* Maximizes **GPU utilization and training throughput**
+
+### 🌱 Green AI Approach
+
+* Reduced computational cost via:
+
+  * Early stopping
+  * Efficient image resizing
+  * Lightweight augmentation strategy
+
+---
+
+## 📊 Model Performance
+
+| Metric              | Result                                      |
+| ------------------- | ------------------------------------------- |
+| Validation Accuracy | ~98%                                        |
+| Loss Function       | Categorical Cross-Entropy                   |
+| Evaluation Strategy | Validation-set based performance monitoring |
+
+The model demonstrates **robust generalization across disease classes**, making it suitable for practical agricultural applications.
+
+---
+
+## 📁 Project Structure
+
+```
 tomato-disease-detection/
+│
 ├── notebook/
-│   └── training.ipynb   # Core training logic, EDA, and model evaluation
-├── models/              # Exported model files (.h5 / .keras)
+│   └── training.ipynb        # Training pipeline, EDA, evaluation
+│
+├── models/                   # Saved trained models (.h5 / .keras)
+│
 ├── .gitignore
 └── README.md
-🛠️ Technical Stack
-Framework: TensorFlow / Keras
+```
 
-Libraries: NumPy, Pandas, Matplotlib, OpenCV
+---
 
-Environment: Jupyter Notebook / Google Colab
+## 🛠️ Tech Stack
 
-⚙️ Implementation Details
-1. Preprocessing & Resizing
-To manage computational load, all images are standardized to 256x256 pixels. This specific resolution was chosen to balance the preservation of fine disease textures (like small fungal spots) with the need for memory efficiency.
+**Deep Learning Framework**
 
-2. Strategic Data Augmentation
-Due to RAM exhaustion challenges during development, a "Few-but-Effective" augmentation strategy was implemented:
+* TensorFlow
+* Keras
 
-Random Horizontal/Vertical Flips: To account for different camera orientations in the field.
+**Supporting Libraries**
 
-Random Rotation: To ensure the model recognizes leaf patterns from any angle.
+* NumPy
+* Pandas
+* Matplotlib
+* OpenCV
 
-Note: These are applied "on-the-fly" during training to keep the memory footprint low.
+**Development Environment**
 
-🗺️ Future Enhancements
-API Integration: Wrapping the model in a FastAPI backend for real-time web inference.
+* Jupyter Notebook
+* Google Colab
 
-Quantization: Converting the model to TensorFlow Lite (TFLite) for offline mobile deployment in rural areas.
+---
 
-Edge Integration: Deploying on IoT-enabled cameras for automated greenhouse monitoring.
+## ⚙️ Implementation Details
 
-👨‍💻 Author
-Sandeep
+### 📐 Image Preprocessing
 
-GitHub: @sandeepdgn
+All images are resized to **256 × 256 pixels** to balance:
+
+* Fine-grained disease texture preservation
+* Computational efficiency
+* Memory optimization
+
+### 🔄 Strategic Data Augmentation
+
+A **minimal yet effective augmentation strategy** was used:
+
+* Random Horizontal & Vertical Flips
+* Random Rotation
+
+These augmentations are applied **dynamically during training**, reducing memory usage while improving generalization.
+
+---
+
+## 🚀 Future Enhancements
+
+* 🌐 **API Deployment**
+  Integrate with FastAPI for real-time disease prediction via web interface
+
+* 📱 **Mobile Optimization**
+  Convert model to **TensorFlow Lite (TFLite)** for offline rural deployment
+
+* 📡 **Edge AI Integration**
+  Deploy on **IoT-enabled smart cameras** for automated greenhouse monitoring
+
+---
+
+## 📊 Dataset Credit
+
+This project uses the **PlantVillage Dataset**:
+https://www.kaggle.com/datasets/arjuntejaswi/plant-village/data
+
+All dataset rights belong to the original creators and contributors.
+
+---
+
+## 👨‍💻 Author
+
+**Sandeep**
+🔗 GitHub: https://github.com/sandeepdgn
+
+---
+
+## ⭐ Project Goal
+
+To build a **practical, scalable, and environmentally responsible AI system** that supports farmers and agricultural researchers in **early detection of crop diseases**, ultimately contributing to improved food security.
+
+---
